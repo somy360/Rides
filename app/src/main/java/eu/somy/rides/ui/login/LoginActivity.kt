@@ -1,6 +1,7 @@
 package eu.somy.rides.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -16,6 +17,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import eu.somy.rides.R
+import eu.somy.rides.ui.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -101,6 +103,8 @@ class LoginActivity : AppCompatActivity() {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
         Toast.makeText(
                 applicationContext,
                 "$welcome + to the Rides App $displayName",
